@@ -44,13 +44,13 @@ public class ListenGroup {
             if (message instanceof Face) {
                 log.info(MessageFormat.format("[Face表情: {0} ]", ((Face) message).getId()));
             }
-            if (message instanceof At) {
-                ID targetId = ((At) message).getTarget();
-                GroupMember targetMember = group.getMember(targetId);
-                if (targetMember == null) {
-                    log.info(MessageFormat.format("[AT消息:未找到目标用户: {0} ]", targetId));
-                } else {
-                    log.info(MessageFormat.format("[AT消息: @{0}( {1} )", targetMember.getNickOrUsername(), targetMember.getId()));
+            if (message instanceof At at){
+                ID target = at.getTarget();
+                GroupMember member = group.getMember(target);
+                if (member==null){
+                    log.info(MessageFormat.format("[AT消息:未找到目标用户: {0} ]", target));
+                }else {
+                    log.info(MessageFormat.format("[AT消息: @{0}( {1} )", member.getNickOrUsername(), member.getId()));
                 }
             }
             if (message instanceof SimbotOriginalMiraiMessage) {
