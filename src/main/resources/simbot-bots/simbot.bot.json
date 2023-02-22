@@ -1,9 +1,9 @@
 {
   "component": "simbot.mirai",
-  "code": 2150660037,
+  "code": code,
   "passwordInfo": {
     "type": "text",
-    "text": "wgz200209144074L"
+    "text": "password"
   },
   "config": {
     "protocol": "IPAD",
